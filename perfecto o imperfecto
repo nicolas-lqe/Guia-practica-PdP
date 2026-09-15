@@ -1,0 +1,19 @@
+|numero divisor suma_divisores|
+
+numero := (UIManager default request: 'Ingrese un número para su comparación') asNumber.
+
+divisor := 1.
+
+suma_divisores := 0.
+
+[divisor <= (numero //2)] whileTrue: [ 
+	numero\\divisor = 0
+	ifTrue: [suma_divisores := suma_divisores + divisor].
+	divisor := divisor + 1.
+].
+
+(numero = suma_divisores) 
+
+ifTrue: [Transcript show: 'El número: ', numero printString,' es perfecto.']
+
+ifFalse: [Transcript show: 'El número: ', numero printString, ' no es perfecto.']
